@@ -7,7 +7,7 @@ RUN docker-php-ext-configure gd --with-freetype --with-jpeg && docker-php-ext-in
 RUN curl -sS https://getcomposer.org/installer | php && mv composer.phar /usr/local/bin/composer
 
 WORKDIR /var/www/html
-RUN composer create-project contao/managed-edition contao 5.5
+RUN composer create-project contao/managed-edition contao 4.13
 RUN curl -sS -o ${APACHE_DOCUMENT_ROOT}/contao-manager.phar.php https://download.contao.org/contao-manager/stable/contao-manager.phar
 
 RUN chown -R www-data:www-data /var/www/html
